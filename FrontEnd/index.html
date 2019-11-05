@@ -1,0 +1,98 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+    <script src = "index.js" ></script>
+</head>
+<body>
+    <table id="tbVeiculo" class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col"><button type='button' class='btn btn-success btnIncluir' data-toggle='modal' data-target='#ModalDetalisVeiculo'>Incluir Novo Veículo</button></th>
+                <th scope="col">Pesquisar Placa:</th>
+                <th scope="col"><input type="text" class="form-control" id="_placaID" placeholder="Digite a Placa..."></th>
+                <th scope="col"><button type='button' class='btn btn-info btnPesquisar'>Buscar</button></th>
+                <th scope="col"><button type='button' class='btn btn-info btnPesquisarTodos'>Buscar Todos</button></th>
+            </tr>
+            <tr>
+                <th scope="col">Placa</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Ano</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <!-- Modal -->
+
+    <div class="modal fade" id="ModalDetalisVeiculo" tabindex="-1" role="dialog" aria-labelledby="ModalDetalisVeiculoLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalDetalisVeiculoLabel">Detalhes do Veiculo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="needs-validation" novalidate>
+                        <div class="form-row align-items-center">
+                            <div class="col-md-4 mb-2">
+                                <label for="_placa" class="col-form-label">Placa:</label>
+                                <input type="text" class="form-control" id="_placa">
+                                <div class="invalid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <label for="_marca" class="col-form-label">Marca:</label>
+                                <input type="text" class="form-control" id="_marca">
+                            </div>
+                        </div>
+                        <div class="form-row align-items-center">
+                            <div class="col-md-4 mb-2">
+                                <label for="_ano" class="col-form-label">Ano:</label>
+                                <input type="text" class="form-control" id="_ano">
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <div class="form-check">
+                                    <label for="_vendido" class="col-form-label">Vendido:</label><br />
+                                    <input type="checkbox" class="form-check-input" id="_vendido">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row align-items-center">
+                            <label for="_descricao" class="col-form-label">Descrição:</label>
+                            <textarea class="form-control" id="_descricao" required></textarea>
+                        </div>
+                        <div class="form-row align-items-center">
+                            <div class="form-check col-md-4 sm-1 ">
+                                <label for="_created" id="_publicado" class="col-form-label"></label><br />
+                                <label class="col-form-label" id="_created"></label><br />
+                            </div>
+                            <div class="form-check col-md-4 sm-1 ">
+                                <label for="_updated" id="_atualizacao" class="col-form-label"></label><br />
+                                <label class="col-form-label" id="_updated"></label><br />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="btFecharModal" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary btSalvar" id="btSalvar">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
